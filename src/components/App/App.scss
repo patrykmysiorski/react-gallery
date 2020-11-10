@@ -7,16 +7,6 @@
   padding: 0 25px;
 }
 
-li,
-a,
-button {
-  font-family: sans-serif;
-  font-size: 16px;
-  color: #edf0f1;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -25,6 +15,15 @@ button {
   background-color: #718792;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  li,
+  a,
+  button {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
 
 .logo {

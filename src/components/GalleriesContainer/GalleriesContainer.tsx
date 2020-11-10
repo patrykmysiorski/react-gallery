@@ -12,9 +12,11 @@ const GalleriesContainer: React.FC = () => {
       <div className="flex-row-container flex-justify-space-around galleries-container flex-wrap">
         {galleriesArray.map((gallery: IGallery) => (
           <Gallery
+            id={gallery.galleryId}
             title={gallery.title}
             date={gallery.dateCreated.toISOString()}
             description={gallery.description}
+            coverUrl={gallery.coverUrl}
           />
         ))}
       </div>

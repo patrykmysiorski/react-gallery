@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import News from "../News/News";
 import GalleriesContainer from "../GalleriesContainer/GalleriesContainer";
 import About from "../About/About";
+import GalleryPage from "../GalleryPage/GalleryPage";
 
 const App: React.FC = () => {
   return (
@@ -41,6 +42,7 @@ const App: React.FC = () => {
             <Route path="/contact">
               <About />
             </Route>
+            <Route path={"/gallery/:galleryId"} component={GalleryPage} />
           </Switch>
         </div>
       </Router>
