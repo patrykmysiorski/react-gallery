@@ -20,7 +20,8 @@ const GALLERIES = [
       .subtract("15", "days")
       .toDate(),
     coverUrl: "/img/galleries/box2/main.jpeg",
-    description: "Tydzień zwiedzania południowego Maroka z ojcem.",
+    description:
+      "Tydzień zwiedzania południowego Maroka z ojcemXDDDDDD DDDDDD DDDDDDD DDDDDDDDD DDDDDDD DDXDDDDD DDDDDDD DDDDDDDD.",
     tags: [],
     photos: [],
   },

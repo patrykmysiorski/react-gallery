@@ -21,12 +21,14 @@ const Gallery: React.FC<IProps> = ({
   return (
     <div className={"gallery-box"}>
       <Link to={`/gallery/${id}`}>
-        <h1>{title}</h1>
         <div className="picture-box">
           <img src={process.env.PUBLIC_URL + coverUrl} alt={"cover"} />
         </div>
-        <p>{moment(date).format("DD.MM.YYYY HH:MM")}</p>
-        <p>{description}</p>
+        <div className="gallery-box__info">
+          <p>{moment(date).format("DD.MM.YYYY, HH:MM")}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
       </Link>
     </div>
   );
