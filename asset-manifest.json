@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-gallery/static/css/main.9958c846.chunk.css",
-    "main.js": "/react-gallery/static/js/main.017c4613.chunk.js",
-    "main.js.map": "/react-gallery/static/js/main.017c4613.chunk.js.map",
+    "main.css": "/react-gallery/static/css/main.974dffde.chunk.css",
+    "main.js": "/react-gallery/static/js/main.adecdfdc.chunk.js",
+    "main.js.map": "/react-gallery/static/js/main.adecdfdc.chunk.js.map",
     "runtime-main.js": "/react-gallery/static/js/runtime-main.79e933da.js",
     "runtime-main.js.map": "/react-gallery/static/js/runtime-main.79e933da.js.map",
     "static/js/2.ad100af5.chunk.js": "/react-gallery/static/js/2.ad100af5.chunk.js",
     "static/js/2.ad100af5.chunk.js.map": "/react-gallery/static/js/2.ad100af5.chunk.js.map",
     "index.html": "/react-gallery/index.html",
-    "static/css/main.9958c846.chunk.css.map": "/react-gallery/static/css/main.9958c846.chunk.css.map",
+    "static/css/main.974dffde.chunk.css.map": "/react-gallery/static/css/main.974dffde.chunk.css.map",
     "static/js/2.ad100af5.chunk.js.LICENSE.txt": "/react-gallery/static/js/2.ad100af5.chunk.js.LICENSE.txt",
     "static/media/logo.103b5fa1.svg": "/react-gallery/static/media/logo.103b5fa1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.79e933da.js",
     "static/js/2.ad100af5.chunk.js",
-    "static/css/main.9958c846.chunk.css",
-    "static/js/main.017c4613.chunk.js"
+    "static/css/main.974dffde.chunk.css",
+    "static/js/main.adecdfdc.chunk.js"
   ]
 }
