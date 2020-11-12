@@ -9,7 +9,7 @@ const GalleriesContainer: React.FC = () => {
   return (
     <div>
       <h1>My travels</h1>
-      <div className="flex-row-container flex-justify-space-around galleries-container flex-wrap">
+      <div className="flex-row-container flex-wrap flex-justify-space-around">
         {galleriesArray.map((gallery: IGallery) => (
           <Gallery
             id={gallery.galleryId}
