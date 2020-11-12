@@ -14,7 +14,7 @@ const GalleriesContainer: React.FC = () => {
           <Gallery
             id={gallery.galleryId}
             title={gallery.title}
-            date={gallery.dateCreated.toISOString()}
+            date={gallery.dateCreated}
             description={gallery.description}
             coverUrl={gallery.coverUrl}
           />
