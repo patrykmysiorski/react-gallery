@@ -33,11 +33,11 @@ const App: React.FC = () => {
         </header>
         <div className="app-content">
           <Switch>
-            <Route path="/news">
-              <News />
-            </Route>
             <Route exact path="/">
               <GalleriesContainer />
+            </Route>
+            <Route path="/news">
+              <News />
             </Route>
             <Route path="/contact">
               <About />
