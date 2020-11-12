@@ -1,5 +1,6 @@
 import React from "react";
 import "./Gallery.scss";
+import { Link } from "react-router-dom";
 
 interface IProps {
   id: string;
@@ -18,16 +19,16 @@ const Gallery: React.FC<IProps> = ({
 }) => {
   return (
     <div className={"gallery-box"}>
-      <a href={`/gallery/${id}`}>
+      <Link to={`/gallery/${id}`}>
         <h1>{title}</h1>
         <img
           src={process.env.PUBLIC_URL + coverUrl}
-          alt={"cover image"}
+          alt={"cover"}
           width={200}
         />
         <p>{date}</p>
         <p>{description}</p>
-      </a>
+      </Link>
     </div>
   );
 };
