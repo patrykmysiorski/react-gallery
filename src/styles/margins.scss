@@ -1,0 +1,9 @@
+$directions: "" "", "-top" "-t", "-bottom" "-b", "-left" "-l", "-right" "-r";
+
+@for $i from 1 through 5 {
+  @each $name, $short in $directions {
+    .m#{$short}-#{$i} {
+      margin#{$name}: ($i * 8px);
+    }
+  }
+}

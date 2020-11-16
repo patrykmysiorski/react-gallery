@@ -2,6 +2,8 @@ import React from "react";
 import "./Gallery.scss";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import classnames from "classnames";
+import { addDots } from "../../utils/stringUtils";
 
 interface IProps {
   id: string;
@@ -9,6 +11,7 @@ interface IProps {
   date: Date;
   description: string;
   coverUrl: string;
+  backgroundColor: boolean;
 }
 
 const Gallery: React.FC<IProps> = ({
@@ -17,17 +20,34 @@ const Gallery: React.FC<IProps> = ({
   date,
   description,
   coverUrl,
+  backgroundColor,
 }) => {
   return (
-    <div className={"gallery-box"}>
+    <div
+      className={classnames(
+        "gallery-box",
+        `${backgroundColor && "background-color"}`
+      )}
+    >
       <Link to={`/gallery/${id}`}>
         <div className="picture-box">
           <img src={process.env.PUBLIC_URL + coverUrl} alt={"cover"} />
         </div>
-        <div className="gallery-box__info">
-          <p>{moment(date).format("DD.MM.YYYY, HH:MM")}</p>
-          <h2>{title}</h2>
-          <p>{description}</p>
+        <div
+          className={classnames(
+            "gallery-box__info",
+            "p-1",
+            "flex-col-container",
+            "flex-justify-end"
+          )}
+        >
+          <h3 className={"m-b-1"}>{title}</h3>
+          <span>{addDots(description, 200)}</span>
+          <div className="date">
+            <i>
+              <p>{moment(date).format("DD.MM.YYYY")}</p>
+            </i>
+          </div>
         </div>
       </Link>
     </div>

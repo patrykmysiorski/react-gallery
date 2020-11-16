@@ -1,0 +1,17 @@
+.single-item {
+  //background-color: red;
+  min-height: 150px;
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+}
+//#info {
+//  display: flex;
+//  flex-direction: column;
+//  background-color: green;
+//}
+#footer {
+  margin-top: auto;
+  background-color: blue;
+  opacity: 0.5;
+}
