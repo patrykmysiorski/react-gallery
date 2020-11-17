@@ -10,25 +10,27 @@ import NavBar from "../NavBar/NavBar";
 
 const App: React.FC = () => {
   return (
-    <div className={"app-container"}>
+    <>
       <NavBar />
-      <div className="app-content">
-        <Switch>
-          <Route exact path={"/"}>
-            <GalleriesContainer />
-          </Route>
-          <Route path={`${NEWS_URL}`}>
-            <News />
-          </Route>
-          <Route path={`${CONTACT_URL}`}>
-            <About />
-          </Route>
-          <Route path={`${GALLERY_URL}`}>
-            <GalleryPage />
-          </Route>
-        </Switch>
+      <div className={"app-container"}>
+        <div className="app-content">
+          <Switch>
+            <Route exact path={"/"}>
+              <GalleriesContainer />
+            </Route>
+            <Route path={`${NEWS_URL}`}>
+              <News />
+            </Route>
+            <Route path={`${CONTACT_URL}`}>
+              <About />
+            </Route>
+            <Route path={`${GALLERY_URL}`}>
+              <GalleryPage />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
