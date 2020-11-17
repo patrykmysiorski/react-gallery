@@ -13,7 +13,6 @@ const GalleriesContainer: React.FC = () => {
       <div
         className={classNames(
           "galleries-container",
-          "galleries-container",
           "flex-row-container",
           "flex-wrap",
           "m-t-2"

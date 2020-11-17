@@ -30,9 +30,12 @@ const Gallery: React.FC<IProps> = ({
       )}
     >
       <Link to={`/gallery/${id}`}>
-        <div className="picture-box">
-          <img src={process.env.PUBLIC_URL + coverUrl} alt={"cover"} />
-        </div>
+        <div
+          className="picture-box"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + coverUrl})`,
+          }}
+        />
         <div
           className={classnames(
             "gallery-box__info",

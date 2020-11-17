@@ -1,4 +1,3 @@
-// import {xd} from
 import moment from "moment";
 
 const GALLERIES = [
@@ -31,6 +30,16 @@ const GALLERIES = [
     title: "Thailand",
     dateCreated: moment(new Date()).subtract("3", "years").toDate(),
     coverUrl: "/img/galleries/box3/main.jpeg",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem.",
+    tags: [],
+    photos: [],
+  },
+  {
+    galleryId: "4",
+    title: "Madrid",
+    dateCreated: moment(new Date()).subtract("3", "years").toDate(),
+    coverUrl: "/img/galleries/box4/main.jpeg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem.",
     tags: [],
