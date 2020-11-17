@@ -3,6 +3,11 @@
   justify-content: space-between;
   background-color: #606060;
 
+  a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
   .logo-part {
     display: flex;
     padding: 6px 20px;
@@ -21,8 +26,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-decoration: none;
-      color: aliceblue;
 
       &:hover {
         background-color: #29b6f6;
@@ -35,6 +38,16 @@
       font-size: 18px;
       color: white;
     }
+  }
+
+  .user-panel-header {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    cursor: pointer;
   }
 }
 
