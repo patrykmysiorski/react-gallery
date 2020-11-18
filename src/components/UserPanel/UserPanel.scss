@@ -6,7 +6,30 @@
   background-color: aliceblue;
   color: black;
   z-index: 1;
-  //right: 130px;
   right: 25px;
   top: 90px;
+  text-align: center;
+
+  .username {
+    font-weight: 700;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 6px 0;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    &:hover {
+      background-color: #29b6f6;
+      color: aliceblue;
+    }
+  }
+
+  a:last-child {
+    border-top: 1px solid black;
+    margin-top: auto;
+  }
 }
