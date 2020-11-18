@@ -8,7 +8,7 @@ import UserPanel from "../UserPanel/UserPanel";
 
 const NavBar = () => {
   const avatarUrl = "/img/user/user.jpeg";
-  const [userPanelhidden, setUserPanelHidden] = useState(true);
+  const [userPanelHidden, setUserPanelHidden] = useState(true);
   return (
     <header>
       <div className={"header p-l-3 p-r-3"}>
@@ -31,14 +31,14 @@ const NavBar = () => {
           </div>
           <div
             className="user-panel-header m-r-1 m-l-1"
-            onClick={() => setUserPanelHidden(!userPanelhidden)}
+            onClick={() => setUserPanelHidden(!userPanelHidden)}
             style={{
               backgroundImage: `url(${process.env.PUBLIC_URL + avatarUrl})`,
             }}
           />
         </div>
       </div>
-      {!userPanelhidden && <UserPanel />}
+      {!userPanelHidden && <UserPanel />}
     </header>
   );
 };
