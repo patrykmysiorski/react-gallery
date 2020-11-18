@@ -4,8 +4,8 @@ interface IGallery {
   dateCreated: Date;
   description: string;
   coverUrl: string;
-  tags: any;
-  photos: any;
+  tags?: any;
+  photos?: any;
 }
 
 export default IGallery;
