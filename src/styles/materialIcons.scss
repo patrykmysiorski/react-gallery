@@ -1,5 +1,7 @@
 .material-icons {
-  &.md-16 {
-    font-size: 16px;
+  @for $i from 10 through 24 {
+    &.md-#{$i} {
+      font-size: ($i * 1px);
+    }
   }
 }

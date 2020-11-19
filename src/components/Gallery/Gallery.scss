@@ -1,9 +1,11 @@
+@import "src/styles/variables";
+
 .gallery-box {
   width: 25%;
   min-height: 330px;
   a {
     text-decoration: none;
-    color: aliceblue;
+    color: $white-font;
   }
   &:hover {
     opacity: 0.85;
@@ -28,5 +30,5 @@
 }
 
 .background-color {
-  background-color: #606060;
+  background-color: $gray;
 }

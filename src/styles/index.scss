@@ -5,6 +5,7 @@
 @import "variables";
 @import "buttons";
 @import "materialIcons";
+@import "sizes";
 
 html {
   box-sizing: border-box;
@@ -19,7 +20,7 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: #363636;
-  color: aliceblue;
+  background-color: $dark-gray;
+  color: $white-font;
   font-family: "Roboto", sans-serif;
 }

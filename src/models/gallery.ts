@@ -4,7 +4,7 @@ interface IGallery {
   dateCreated: Date;
   description: string;
   coverUrl: string;
-  tags?: any;
+  tags?: string[];
   photos?: any;
 }
 

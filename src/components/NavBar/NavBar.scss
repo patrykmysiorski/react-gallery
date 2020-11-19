@@ -1,11 +1,13 @@
+@import "src/styles/variables";
+
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #606060;
+  background-color: $gray;
 
   a {
     text-decoration: none;
-    color: aliceblue;
+    color: $white-font;
   }
 
   .logo-part {
@@ -33,7 +35,7 @@
       }
 
       &:hover {
-        background-color: #29b6f6;
+        background-color: $brand-primary;
       }
     }
   }

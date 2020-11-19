@@ -11,7 +11,7 @@ const NavBar = () => {
   const [userPanelHidden, setUserPanelHidden] = useState(true);
   return (
     <header>
-      <div className={"header p-l-3 p-r-3"}>
+      <div className={"header p-l-6 p-r-6"}>
         <Link to={"/"}>
           <div
             className={classNames(

@@ -39,7 +39,7 @@ const Gallery: React.FC<IProps> = ({
         <div
           className={classnames(
             "gallery-box__info",
-            "p-1",
+            "p-2",
             "flex-col-container",
             "flex-justify-end"
           )}
