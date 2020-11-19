@@ -26,7 +26,6 @@ const GalleryPage: React.FC = () => {
           <div
             className={"flex-row-container flex-align-items-center m-t-2 m-b-1"}
           >
-            {console.log("inside", gallery)}
             <Link to={"/"}>
               <button className={"button button-primary"}>
                 <div className="flex-row-container flex-align-items-center">

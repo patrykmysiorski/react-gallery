@@ -1,6 +1,8 @@
 import { GalleryState } from "./galleryTypes";
-import { FETCH_GALLERIES, GalleriesActionTypes } from "./galleryActionTypes";
-import moment from "moment";
+import {
+  FETCH_GALLERIES_SUCCESS,
+  GalleriesActionTypes,
+} from "./galleryActionTypes";
 
 const initialState: GalleryState = {
   galleries: [],
@@ -11,22 +13,10 @@ const galleryReducer = (
   action: GalleriesActionTypes
 ): GalleryState => {
   switch (action.type) {
-    case FETCH_GALLERIES:
+    case FETCH_GALLERIES_SUCCESS:
       return {
         ...state,
-        galleries: [
-          ...state.galleries,
-          {
-            galleryId: "1",
-            title: "Roma",
-            dateCreated: moment(new Date()).subtract("1", "month").toDate(),
-            coverUrl: "/img/galleries/box1/main.jpeg",
-            description:
-              "Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio.",
-            tags: [],
-            photos: [],
-          },
-        ],
+        galleries: action.payload,
       };
     default:
       return state;
