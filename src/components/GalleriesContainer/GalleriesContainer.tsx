@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GALLERIES from "../../constants/galleriesData";
 import Gallery from "../Gallery/Gallery";
 import IGallery from "../../models/gallery";
 import "./GalleriesContainer.scss";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { fetchGalleriesAction } from "../../redux/actions/galleryActions";
 
 const GalleriesContainer: React.FC = () => {
   const galleriesArray = GALLERIES.concat(GALLERIES);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchGalleriesAction());
+  }, [dispatch]);
   return (
     <div>
       <h1 className={"m-t-2"}>My galleries</h1>
