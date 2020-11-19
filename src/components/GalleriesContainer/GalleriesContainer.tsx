@@ -5,7 +5,7 @@ import IGallery from "../../models/gallery";
 import "./GalleriesContainer.scss";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
-import { fetchGalleriesAction } from "../../redux/actions/galleryActions";
+import { fetchGalleriesAction } from "../../redux/gallery/galleryActions";
 
 const GalleriesContainer: React.FC = () => {
   const galleriesArray = GALLERIES.concat(GALLERIES);

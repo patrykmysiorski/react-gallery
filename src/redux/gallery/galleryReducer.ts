@@ -1,8 +1,5 @@
-import { GalleryState } from "../types/galleryTypes";
-import {
-  FETCH_GALLERIES,
-  GalleriesActionTypes,
-} from "../actionsTypes/galleryActionTypes";
+import { GalleryState } from "./galleryTypes";
+import { FETCH_GALLERIES, GalleriesActionTypes } from "./galleryActionTypes";
 import moment from "moment";
 
 const initialState: GalleryState = {

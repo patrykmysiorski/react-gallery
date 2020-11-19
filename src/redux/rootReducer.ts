@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import galleryReducer from "./galleryReducer";
+import galleryReducer from "./gallery/galleryReducer";
 
 const rootReducer = combineReducers({
   galleryReducer,
