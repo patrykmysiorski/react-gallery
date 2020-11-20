@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-import GALLERIES from "../../constants/galleriesData";
-import IGallery from "../../models/gallery";
 import moment from "moment";
 import TagsContainer from "../TagsContainer/TagsContainer";
+import { useSelector } from "react-redux";
+import { gallerySelector } from "../../redux/gallery/gallerySelectors";
 
 interface IParams {
   galleryId: string;
@@ -11,13 +11,7 @@ interface IParams {
 
 const GalleryPage: React.FC = () => {
   const { galleryId }: IParams = useParams();
-  const [gallery, setGallery] = useState<IGallery>();
-  useEffect(() => {
-    const index = GALLERIES.findIndex(
-      (gallery: IGallery) => gallery.galleryId === galleryId
-    );
-    setGallery(GALLERIES[index]);
-  }, [galleryId]);
+  const gallery = useSelector(gallerySelector(galleryId));
 
   return (
     <>

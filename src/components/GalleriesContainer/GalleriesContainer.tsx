@@ -6,14 +6,15 @@ import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGalleriesAction } from "../../redux/gallery/galleryActions";
 import { galleriesSelector } from "../../redux/gallery/gallerySelectors";
+import { AppDispatch } from "../../redux/store";
 
 const GalleriesContainer: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchGalleriesAction());
   }, [dispatch]);
 
-  const galleries = useSelector(galleriesSelector);
+  const galleries: IGallery[] = useSelector(galleriesSelector);
 
   return (
     <div>

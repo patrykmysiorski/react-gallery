@@ -7,3 +7,8 @@ export const galleriesSelector = createSelector(
   [galleryReducerSelector],
   (galleryReducer) => galleryReducer.galleries
 );
+
+export const gallerySelector = (id: string) =>
+  createSelector(galleriesSelector, (galleries) =>
+    galleries.find((gallery) => gallery.galleryId === id)
+  );

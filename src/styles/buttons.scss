@@ -4,7 +4,7 @@
 .button {
   display: inline-block;
   margin: 0;
-  padding: 0px 15px;
+  padding: 0 15px;
   line-height: $input-height-base;
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -65,6 +65,15 @@
     $btn-color,
     $brand-danger,
     $brand-danger-hover,
+    $brand-danger-active
+  );
+}
+
+.button-edit {
+  @include button-color-variant(
+    $btn-color,
+    $brand-warning,
+    $brand-warning-hover,
     $brand-danger-active
   );
 }
