@@ -5,6 +5,7 @@ import { fetchGalleriesSuccessAction } from "./galleryActions";
 const fetchData = async () => {
   try {
     const response = await fetch(
+      // "/api/hello"
       "https://my-json-server.typicode.com/patrykmysiorski/fake-api-react-gallery/gallery"
     );
     return await response.json();
@@ -16,6 +17,7 @@ const fetchData = async () => {
 function* fetchGalleriesAsync() {
   try {
     const data = yield call(fetchData);
+    yield console.log(data);
     yield put(fetchGalleriesSuccessAction(data));
   } catch (error) {
     console.log("error in saga", error);
