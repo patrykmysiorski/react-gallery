@@ -63,7 +63,6 @@ const fetchGallery = async (galleryId: string) => {
 
 // TODO look at types here
 function* fetchGalleryAsync(action: any) {
-  yield console.log("fetch gallery staaaaaaaaart", action.payload);
   try {
     const data = yield fetchGallery(action.payload);
     yield put(fetchGallerySuccessAction(data));
