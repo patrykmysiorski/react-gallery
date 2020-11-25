@@ -4,14 +4,14 @@ import IGallery from "../../models/gallery";
 import "./GalleriesContainer.scss";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGalleriesAction } from "../../redux/gallery/galleryActions";
+import { fetchGalleriesStartAction } from "../../redux/gallery/galleryActions";
 import { galleriesSelector } from "../../redux/gallery/gallerySelectors";
 import { AppDispatch } from "../../redux/store";
 
 const GalleriesContainer: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchGalleriesAction());
+    dispatch(fetchGalleriesStartAction());
   }, [dispatch]);
 
   const galleries: IGallery[] = useSelector(galleriesSelector);

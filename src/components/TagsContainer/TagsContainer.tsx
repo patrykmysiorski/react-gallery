@@ -15,7 +15,7 @@ const TagsContainer: React.FC<IProps> = ({ tags }) => {
       .then((res) => console.log("get ", res));
   };
   useEffect(() => {
-    startFetch();
+    // startFetch();
   }, []);
 
   const object = {

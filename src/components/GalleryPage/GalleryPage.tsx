@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import moment from "moment";
 import TagsContainer from "../TagsContainer/TagsContainer";
-import { useSelector } from "react-redux";
-import { gallerySelector } from "../../redux/gallery/gallerySelectors";
+import { useDispatch, useSelector } from "react-redux";
+import { currentGallerySelector } from "../../redux/gallery/gallerySelectors";
+import { AppDispatch } from "../../redux/store";
+import { fetchGalleryStartAction } from "../../redux/gallery/galleryActions";
+import { RootState } from "../../redux/rootReducer";
+import IGallery from "../../models/gallery";
 
 interface IParams {
   galleryId: string;
@@ -11,7 +15,13 @@ interface IParams {
 
 const GalleryPage: React.FC = () => {
   const { galleryId }: IParams = useParams();
-  const gallery = useSelector(gallerySelector(galleryId));
+  const dispatch: AppDispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchGalleryStartAction(galleryId));
+  }, [dispatch, galleryId]);
+  const gallery: IGallery = useSelector<RootState, IGallery>((state) =>
+    currentGallerySelector(state)
+  );
 
   return (
     <>

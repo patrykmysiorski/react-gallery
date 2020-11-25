@@ -1,11 +1,13 @@
 import { GalleryState } from "./galleryTypes";
 import {
   FETCH_GALLERIES_SUCCESS,
+  FETCH_GALLERY_SUCCESS,
   GalleriesActionTypes,
 } from "./galleryActionTypes";
 
 const initialState: GalleryState = {
   galleries: [],
+  currentGallery: {},
 };
 
 const galleryReducer = (
@@ -17,6 +19,11 @@ const galleryReducer = (
       return {
         ...state,
         galleries: action.payload,
+      };
+    case FETCH_GALLERY_SUCCESS:
+      return {
+        ...state,
+        currentGallery: action.payload,
       };
     default:
       return state;
