@@ -2,80 +2,73 @@ import { all, call, put, takeLatest } from "redux-saga/effects";
 import {
   FETCH_GALLERIES_START,
   FETCH_GALLERY_START,
+  FetchGalleryStartAction,
+  UPDATE_GALLERY_START,
+  UpdateGalleryStartAction,
 } from "./galleryActionTypes";
 import {
   fetchGalleriesFailedAction,
   fetchGalleriesSuccessAction,
   fetchGalleryFailedAction,
   fetchGallerySuccessAction,
+  updateGalleryFailedAction,
+  updateGallerySuccessAction,
 } from "./galleryActions";
 import axios from "axios";
 
-const fetchGalleries = async () => {
-  try {
-    const response = await axios.get("/gallery");
-    return await response.data;
-  } catch (error) {
-    console.log("error when fetching galleries", error);
-  }
-};
-
-const updateGallery = async (id: number, tags?: string[]) => {
-  try {
-    const response = await axios.patch("gallery", {
-      galleryId: id,
-      tags: tags,
-    });
-    console.log("Returned data:", response);
-  } catch (e) {
-    console.log(`Axios request failed: ${e}`);
-  }
-};
-
-function* updateGalleryAsync() {}
+function* fetchGalleriesStart() {
+  yield takeLatest(FETCH_GALLERIES_START, fetchGalleriesAsync);
+}
 
 function* fetchGalleriesAsync() {
   try {
-    const data = yield call(fetchGalleries);
+    const data = yield axios.get("/gallery").then((response) => response.data);
     yield put(fetchGalleriesSuccessAction(data));
   } catch (error) {
-    yield console.log("error in saga", error);
+    yield console.log("error when fetching galleries", error);
     yield put(fetchGalleriesFailedAction());
   }
-}
-
-function* fetchGalleriesStart() {
-  yield takeLatest(FETCH_GALLERIES_START, fetchGalleriesAsync);
 }
 
 function* fetchGalleryStart() {
   yield takeLatest(FETCH_GALLERY_START, fetchGalleryAsync);
 }
 
-const fetchGallery = async (galleryId: string) => {
+function* fetchGalleryAsync(action: FetchGalleryStartAction) {
   try {
-    const response = await axios.get(`/gallery/${galleryId}`);
-    return await response.data;
+    const response = yield axios
+      .get(`/gallery/${action.payload}`)
+      .then((response) => response.data);
+    yield put(fetchGallerySuccessAction(response));
   } catch (error) {
-    console.log(`error when fetching gallery with id ${galleryId}`, error);
-  }
-};
-
-// TODO look at types here
-function* fetchGalleryAsync(action: any) {
-  try {
-    const data = yield fetchGallery(action.payload);
-    yield put(fetchGallerySuccessAction(data));
-  } catch (error) {
-    yield console.log("error in saga", error);
+    console.log(`error when fetching gallery with id ${action.payload}`, error);
     yield put(fetchGalleryFailedAction());
   }
 }
 
 function* updateGalleryStart() {
-  yield takeLatest(FETCH_GALLERIES_START, fetchGalleriesAsync);
+  yield takeLatest(UPDATE_GALLERY_START, updateGalleryAsync);
+}
+
+function* updateGalleryAsync(action: UpdateGalleryStartAction) {
+  try {
+    yield axios
+      .patch("/gallery", {
+        galleryId: action.payload.galleryId,
+        tags: action.payload.tags,
+      })
+      .then((response) => console.log("Returned data: ", response));
+    yield put(updateGallerySuccessAction());
+  } catch (error) {
+    yield console.log("error in saga", error);
+    yield put(updateGalleryFailedAction());
+  }
 }
 
 export function* gallerySaga() {
-  yield all([call(fetchGalleriesStart), call(fetchGalleryStart)]);
+  yield all([
+    call(fetchGalleriesStart),
+    call(fetchGalleryStart),
+    call(updateGalleryStart),
+  ]);
 }

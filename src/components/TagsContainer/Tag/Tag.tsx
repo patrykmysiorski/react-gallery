@@ -1,5 +1,8 @@
 import React from "react";
 import "./Tag.scss";
+import { AppDispatch } from "../../../redux/store";
+import { useDispatch } from "react-redux";
+import { deleteTagAction } from "../../../redux/gallery/tag/tagActions";
 
 interface IProps {
   content: string;
@@ -7,6 +10,7 @@ interface IProps {
 }
 
 const Tag: React.FC<IProps> = ({ content, isEdited }) => {
+  const dispatch: AppDispatch = useDispatch();
   return (
     <div
       className={
@@ -17,7 +21,7 @@ const Tag: React.FC<IProps> = ({ content, isEdited }) => {
       {isEdited && (
         <span
           className="material-icons md-20 pointer"
-          onClick={() => console.log("fired")}
+          onClick={() => dispatch(deleteTagAction(content))}
         >
           delete_forever
         </span>

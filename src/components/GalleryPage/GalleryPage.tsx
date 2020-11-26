@@ -5,7 +5,10 @@ import TagsContainer from "../TagsContainer/TagsContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { currentGallerySelector } from "../../redux/gallery/gallerySelectors";
 import { AppDispatch } from "../../redux/store";
-import { fetchGalleryStartAction } from "../../redux/gallery/galleryActions";
+import {
+  fetchGalleryStartAction,
+  updateGalleryStartAction,
+} from "../../redux/gallery/galleryActions";
 import { RootState } from "../../redux/rootReducer";
 import IGallery from "../../models/gallery";
 
@@ -22,7 +25,14 @@ const GalleryPage: React.FC = () => {
   const gallery: IGallery = useSelector<RootState, IGallery>((state) =>
     currentGallerySelector(state)
   );
-
+  const updateGallery = (): void => {
+    dispatch(
+      updateGalleryStartAction({
+        galleryId: gallery.galleryId,
+        tags: gallery.tags,
+      })
+    );
+  };
   return (
     <>
       {gallery && (
@@ -43,7 +53,7 @@ const GalleryPage: React.FC = () => {
             ).format("DD MMMM YYYY")}`}</h2>
           </div>
           <hr />
-          <TagsContainer tags={gallery.tags} />
+          <TagsContainer tags={gallery.tags} updateGallery={updateGallery} />
         </>
       )}
     </>

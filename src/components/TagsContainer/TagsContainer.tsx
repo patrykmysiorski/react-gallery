@@ -1,38 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Tag from "./Tag/Tag";
 import "./TagsContainer.scss";
 
 interface IProps {
   tags?: string[];
+  updateGallery: Function;
 }
 
-const TagsContainer: React.FC<IProps> = ({ tags }) => {
+const TagsContainer: React.FC<IProps> = ({ tags, updateGallery }) => {
   const [isEdited, setIsEdited] = useState(false);
-
-  const startFetch = () => {
-    fetch("/api/hello")
-      .then((res) => res.json())
-      .then((res) => console.log("get ", res));
-  };
-  useEffect(() => {
-    // startFetch();
-  }, []);
-
-  const object = {
-    test: "testyyy",
-  };
   const handleClick = () => {
-    fetch("/api/world", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(object),
-    })
-      .then((result) => result.json())
-      .then((info) => {
-        console.log(info);
-      });
+    if (isEdited) {
+      updateGallery();
+    }
   };
 
   return (

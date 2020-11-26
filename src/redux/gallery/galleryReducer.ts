@@ -4,6 +4,7 @@ import {
   FETCH_GALLERY_SUCCESS,
   GalleriesActionTypes,
 } from "./galleryActionTypes";
+import { ADD_TAG, DELETE_TAG } from "./tag/tagActionTypes";
 
 const initialState: GalleryState = {
   galleries: [],
@@ -24,6 +25,24 @@ const galleryReducer = (
       return {
         ...state,
         currentGallery: action.payload,
+      };
+    case ADD_TAG:
+      return {
+        ...state,
+        currentGallery: {
+          ...state.currentGallery,
+          tags: state.currentGallery.tags.push(action.payload),
+        },
+      };
+    case DELETE_TAG:
+      return {
+        ...state,
+        currentGallery: {
+          ...state.currentGallery,
+          tags: state.currentGallery.tags.filter(
+            (tag: string) => tag !== action.payload
+          ),
+        },
       };
     default:
       return state;
