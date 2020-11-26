@@ -16,7 +16,7 @@ const TagsContainer: React.FC<IProps> = ({ tags, updateGallery }) => {
   };
 
   return (
-    <div className={"tags-container flex-row-container m-t-2 flex-wrap"}>
+    <div className={"tags-container flex-row-container m-t-2 m-b-1 flex-wrap"}>
       {tags &&
         tags.map((tag: string, index) => (
           <Tag content={tag} key={index} isEdited={isEdited} />

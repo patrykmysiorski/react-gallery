@@ -16,7 +16,7 @@ app.get("/gallery", (req: Request, res: Response) => {
 });
 
 app.get("/gallery/*", (req: Request, res: Response) => {
-  res.send(galleriesMock[1]);
+  res.send(galleriesMock[0]);
 });
 
 app.patch("/gallery", (req: Request, res: Response) => {

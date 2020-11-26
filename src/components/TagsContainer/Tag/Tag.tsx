@@ -12,11 +12,7 @@ interface IProps {
 const Tag: React.FC<IProps> = ({ content, isEdited }) => {
   const dispatch: AppDispatch = useDispatch();
   return (
-    <div
-      className={
-        "flex-row-container flex-align-items-center tag p-1 m-r-1 m-b-1 m-t-1"
-      }
-    >
+    <div className={"flex-row-container flex-align-items-center tag p-1 m-r-1"}>
       <span>{content.toUpperCase()}</span>
       {isEdited && (
         <span

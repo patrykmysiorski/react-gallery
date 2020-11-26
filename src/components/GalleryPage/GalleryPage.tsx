@@ -11,6 +11,7 @@ import {
 } from "../../redux/gallery/galleryActions";
 import { RootState } from "../../redux/rootReducer";
 import IGallery from "../../models/gallery";
+import "./GalleryPage.scss";
 
 interface IParams {
   galleryId: string;
@@ -54,6 +55,31 @@ const GalleryPage: React.FC = () => {
           </div>
           <hr />
           <TagsContainer tags={gallery.tags} updateGallery={updateGallery} />
+          <div className="flex-col-container">
+            <div className="photos-container flex-row-container flex-justify-space-between">
+              <div
+                className="main-photo"
+                style={{
+                  backgroundImage: `url(${
+                    process.env.PUBLIC_URL + gallery.coverUrl
+                  })`,
+                }}
+              />
+              <div className="vertical-line"></div>
+              <div className="others-images flex-row-container flex-wrap flex-justify-space-around">
+                {gallery.photos?.map((photoUrl: string) => (
+                  <div
+                    className="small-image"
+                    style={{
+                      backgroundImage: `url(${
+                        process.env.PUBLIC_URL + photoUrl
+                      })`,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </>
       )}
     </>
