@@ -17,15 +17,17 @@ export const galleriesMock = [
     ],
     comments: [
       {
+        commentId: "1",
         userId: "1",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis rutrum leo, vitae vehicula sem semper eu. Aliquam iaculis sagittis risus, vitae accumsan turpis. Morbi sit amet malesuada quam.",
+          "COMMENT 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis rutrum leo, vitae vehicula sem semper eu. Aliquam iaculis sagittis risus, vitae accumsan turpis. Morbi sit amet malesuada quam.",
         createdAt: moment(new Date()).toISOString(),
       },
       {
+        commentId: "2",
         userId: "1",
         content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis rutrum leo, vitae vehicula sem semper eu. Aliquam iaculis sagittis risus, vitae accumsan turpis. Morbi sit amet malesuada quam.",
+          "COMMENT 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis rutrum leo, vitae vehicula sem semper eu. Aliquam iaculis sagittis risus, vitae accumsan turpis. Morbi sit amet malesuada quam.",
         createdAt: moment(new Date()).toISOString(),
       },
     ],

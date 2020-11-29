@@ -1,12 +1,21 @@
 import React from "react";
 import IComment from "../../../../models/comment";
 import "./Comment.scss";
+import { AppDispatch } from "../../../../redux/store";
+import { useDispatch } from "react-redux";
+import { deleteCommentAction } from "../../../../redux/gallery/comment/commentActions";
 
 interface IProps {
   comment: IComment;
 }
 
 const Comment: React.FC<IProps> = ({ comment }) => {
+  const dispatch: AppDispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deleteCommentAction(comment.commentId));
+  };
+
   return (
     <div className="comments-container flex-row-container flex-justify-space-between">
       <div
@@ -25,7 +34,9 @@ const Comment: React.FC<IProps> = ({ comment }) => {
         <p className="comment-message">{comment.content}</p>
       </div>
       <div className="flex-row-container flex-align-items-center">
-        <button className="button button-danger">delete</button>
+        <button className="button button-danger" onClick={handleDelete}>
+          delete
+        </button>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import IGallery from "../../models/gallery";
 import { TagActionTypes } from "./tag/tagActionTypes";
+import { CommentActionTypes } from "./comment/commentActionTypes";
 
 export const FETCH_GALLERIES_START = "FETCH_GALLERIES_START";
 export const FETCH_GALLERIES_SUCCESS = "FETCH_GALLERIES_SUCCESS";
@@ -65,4 +66,5 @@ export type GalleriesActionTypes =
   | UpdateGalleryStartAction
   | UpdateGallerySuccessAction
   | UpdateGalleryFailedAction
-  | TagActionTypes;
+  | TagActionTypes
+  | CommentActionTypes;
