@@ -13,6 +13,7 @@ import { RootState } from "../../redux/rootReducer";
 import IGallery from "../../models/gallery";
 import "./GalleryPage.scss";
 import OthersImages from "./OthersImages/OthersImages";
+import Comments from "./Comments/Comments";
 
 interface IParams {
   galleryId: string;
@@ -68,6 +69,7 @@ const GalleryPage: React.FC = () => {
             <div className="vertical-line" />
             <OthersImages photos={gallery.photos} />
           </div>
+          <Comments comments={gallery.comments} />
         </>
       )}
     </>

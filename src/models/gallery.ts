@@ -1,3 +1,5 @@
+import IComment from "./comment";
+
 interface IGallery {
   galleryId: string;
   title: string;
@@ -6,6 +8,7 @@ interface IGallery {
   coverUrl: string;
   tags?: string[];
   photos?: any;
+  comments: IComment[];
 }
 
 export default IGallery;

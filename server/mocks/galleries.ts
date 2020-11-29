@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const galleriesMock = [
   {
     galleryId: "1",
@@ -12,6 +14,20 @@ export const galleriesMock = [
       "/img/galleries/box2/main.jpeg",
       "/img/galleries/box6/main.jpeg",
       "/img/galleries/box4/main.jpeg",
+    ],
+    comments: [
+      {
+        userId: "1",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis rutrum leo, vitae vehicula sem semper eu. Aliquam iaculis sagittis risus, vitae accumsan turpis. Morbi sit amet malesuada quam.",
+        createdAt: moment(new Date()).toISOString(),
+      },
+      {
+        userId: "1",
+        content:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis rutrum leo, vitae vehicula sem semper eu. Aliquam iaculis sagittis risus, vitae accumsan turpis. Morbi sit amet malesuada quam.",
+        createdAt: moment(new Date()).toISOString(),
+      },
     ],
   },
   {
