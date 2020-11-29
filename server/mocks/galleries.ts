@@ -8,10 +8,10 @@ export const galleriesMock = [
       "Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio.",
     tags: ["morocco", "tag2", "tag5"],
     photos: [
-      "/img/galleries/box2/main.jpeg",
       "/img/galleries/box1/main.jpeg",
       "/img/galleries/box2/main.jpeg",
-      "/img/galleries/box1/main.jpeg",
+      "/img/galleries/box6/main.jpeg",
+      "/img/galleries/box4/main.jpeg",
     ],
   },
   {

@@ -12,7 +12,7 @@ import {
 import { RootState } from "../../redux/rootReducer";
 import IGallery from "../../models/gallery";
 import "./GalleryPage.scss";
-import classNames from "classnames";
+import OthersImages from "./OthersImages/OthersImages";
 
 interface IParams {
   galleryId: string;
@@ -56,66 +56,17 @@ const GalleryPage: React.FC = () => {
           </div>
           <hr />
           <TagsContainer tags={gallery.tags} updateGallery={updateGallery} />
-          <div className="flex-col-container">
-            <div className="photos-container flex-row-container flex-justify-space-between">
-              <div
-                className="main-photo"
-                style={{
-                  backgroundImage: `url(${
-                    process.env.PUBLIC_URL + gallery.coverUrl
-                  })`,
-                }}
-              />
-              <div className="vertical-line" />
-              <div className="other-images-wrapper flex-row-container flex-align-items-center">
-                <span className="material-icons md-32 m-l-1">
-                  arrow_back_ios
-                </span>
-                <div className="others-images">
-                  <div className="flex-row-container margin-bottom-10">
-                    {gallery.photos?.map((photoUrl: string, index: number) => {
-                      if (index === 0 || index === 1) {
-                        return (
-                          <div
-                            className={classNames(
-                              "small-image",
-                              !index && "m-r-1"
-                            )}
-                            style={{
-                              backgroundImage: `url(${
-                                process.env.PUBLIC_URL + photoUrl
-                              })`,
-                            }}
-                          />
-                        );
-                      }
-                      return null;
-                    })}
-                  </div>
-                  <div className="flex-row-container margin-top-10">
-                    {gallery.photos?.map((photoUrl: string, index: number) => {
-                      if (index === 2 || index === 3) {
-                        return (
-                          <div
-                            className={classNames(
-                              "small-image",
-                              index === 2 ? "m-r-1" : ""
-                            )}
-                            style={{
-                              backgroundImage: `url(${
-                                process.env.PUBLIC_URL + photoUrl
-                              })`,
-                            }}
-                          />
-                        );
-                      }
-                      return null;
-                    })}
-                  </div>
-                </div>
-                <span className="material-icons md-32">arrow_forward_ios</span>
-              </div>
-            </div>
+          <div className="photos-container flex-row-container flex-justify-space-between">
+            <div
+              className="main-photo"
+              style={{
+                backgroundImage: `url(${
+                  process.env.PUBLIC_URL + gallery.coverUrl
+                })`,
+              }}
+            />
+            <div className="vertical-line" />
+            <OthersImages photos={gallery.photos} />
           </div>
         </>
       )}
