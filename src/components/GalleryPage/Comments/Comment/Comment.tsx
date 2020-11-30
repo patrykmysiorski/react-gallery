@@ -3,7 +3,8 @@ import IComment from "../../../../models/comment";
 import "./Comment.scss";
 import { AppDispatch } from "../../../../redux/store";
 import { useDispatch } from "react-redux";
-import { deleteCommentAction } from "../../../../redux/gallery/comment/commentActions";
+import { deleteCommentStartAction } from "../../../../redux/gallery/comment/commentActions";
+import moment from "moment";
 
 interface IProps {
   comment: IComment;
@@ -13,7 +14,7 @@ const Comment: React.FC<IProps> = ({ comment }) => {
   const dispatch: AppDispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch(deleteCommentAction(comment.commentId));
+    dispatch(deleteCommentStartAction(comment.commentId));
   };
 
   return (
@@ -22,14 +23,14 @@ const Comment: React.FC<IProps> = ({ comment }) => {
         className="avatar m-r-1"
         style={{
           backgroundImage: `url(${
-            process.env.PUBLIC_URL + "/img/user/user.jpeg"
+            process.env.PUBLIC_URL + comment.userAvatarUrl
           })`,
         }}
       />
       <div className="flex-col-container main-content">
-        <h5>Author: userName</h5>
+        <h5>Author: {comment.userId}</h5>
         <p>
-          <small>12-02-2012</small>
+          <small>{moment(comment.createdAt).format("DD.MM.YYYY HH:MM")}</small>
         </p>
         <p className="comment-message">{comment.content}</p>
       </div>

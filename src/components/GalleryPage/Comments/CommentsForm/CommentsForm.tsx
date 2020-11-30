@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import { Field, getFormValues, reduxForm } from "redux-form";
 import { renderTextArea } from "../../../../formUtils/renderers";
 import "./CommentsForm.scss";
@@ -7,15 +7,15 @@ import FormButtons from "../../../FormButtons/FormButtons";
 import { AppDispatch } from "../../../../redux/store";
 import { connect, useDispatch } from "react-redux";
 import { RootState } from "../../../../redux/rootReducer";
-import { addCommentAction } from "../../../../redux/gallery/comment/commentActions";
+import { addCommentStartAction } from "../../../../redux/gallery/comment/commentActions";
 
 // TODO find a better way to get form values
 
 const CommentsForm: React.FC<any> = (props) => {
   const dispatch: AppDispatch = useDispatch();
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(addCommentAction(props.formValues.comment, "1"));
+    dispatch(addCommentStartAction(props.formValues.comment, "1", "1"));
   };
   return (
     <div className="flex-col-container comment-form">

@@ -8,7 +8,7 @@ interface IProps {
 
 const OthersImages: React.FC<IProps> = ({ photos }) => (
   <div className="other-images-wrapper flex-row-container flex-align-items-center">
-    <span className="material-icons md-32">arrow_back_ios</span>
+    <span className="material-icons md-32 pointer">arrow_back_ios</span>
     <div className="images-container">
       <div className="flex-row-container margin-bottom-10">
         {photos?.map((photoUrl: string, index) => {
@@ -44,7 +44,9 @@ const OthersImages: React.FC<IProps> = ({ photos }) => (
         })}
       </div>
     </div>
-    <span className="material-icons md-32 m-l-1">arrow_forward_ios</span>
+    <span className="material-icons md-32 m-l-1 pointer">
+      arrow_forward_ios
+    </span>
   </div>
 );
 

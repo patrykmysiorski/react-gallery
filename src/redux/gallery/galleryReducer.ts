@@ -5,9 +5,11 @@ import {
   GalleriesActionTypes,
 } from "./galleryActionTypes";
 import { ADD_TAG, DELETE_TAG } from "./tag/tagActionTypes";
-import { ADD_COMMENT, DELETE_COMMENT } from "./comment/commentActionTypes";
+import {
+  ADD_COMMENT_SUCCESS,
+  DELETE_COMMENT_START,
+} from "./comment/commentActionTypes";
 import IComment from "../../models/comment";
-import moment from "moment";
 
 const initialState: GalleryState = {
   galleries: [],
@@ -47,20 +49,15 @@ const galleryReducer = (
           ),
         },
       };
-    case ADD_COMMENT:
+    case ADD_COMMENT_SUCCESS:
       return {
         ...state,
         currentGallery: {
           ...state.currentGallery,
-          comments: state.currentGallery.comments.concat({
-            commentId: state.currentGallery.comments.length + 1,
-            userId: action.payload.userId,
-            content: action.payload.content,
-            createdAt: moment(new Date()).toISOString(),
-          }),
+          comments: state.currentGallery.comments.concat(action.payload),
         },
       };
-    case DELETE_COMMENT:
+    case DELETE_COMMENT_START:
       return {
         ...state,
         currentGallery: {
